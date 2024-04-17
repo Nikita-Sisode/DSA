@@ -1,0 +1,218 @@
+Day 2 : Special Logic Building Assignment: 10 special Recursion Programs
+
+1. Print 1 to n without using loops
+===
+PROGRAM:
+========
+public class PrintNumbers {
+  
+    public static void printNumbers(int n) {
+        if (n > 0) {
+            printNumbers(n - 1); 
+            System.out.print(n + " "); 
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 10; 
+        printNumbers(n);
+    }
+}
+=======
+OUTPUT:1 2 3 4 5 6 7 8 9 10
+
+==========================================================================================
+==========================================================================================
+
+2. Sum of natural numbers using recursion
+===============
+PROGRAM:
+========
+public class SumOfNaturalNumbers {
+    
+    public static int sum(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            return n + sum(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 10; 
+        int result = sum(n);
+        System.out.println("Sum of first " + n + " natural numbers is: " + result);
+    }
+}
+=========
+OUTPUT:
+Sum of first 10 natural numbers is: 55
+============================================================================================
+============================================================================================
+3. Mean of Array using Recursion
+=====
+PROGRAM:
+========
+public class MeanOfArray {
+  
+    public static int sum(int[] arr, int n) {
+        if (n <= 0) {
+            return 0;
+        } else {
+            return arr[n - 1] + sum(arr, n - 1);
+        }
+    }
+
+    
+    public static double mean(int[] arr) {
+        int sum = sum(arr, arr.length);
+        return (double) sum / arr.length;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50}; 
+        double meanValue = mean(arr);
+        System.out.println("Mean of the array is: " + meanValue);
+   }
+}
+=========
+OUTPUT:
+=======
+Mean of the array is: 30.0
+===========================================================================================
+===========================================================================================
+4. Sum of array elements using recursion
+==========
+Program:
+=========
+public class SumOfArrayElements {
+   
+    public static int sum(int[] arr, int n) {
+        if (n <= 0) {
+            return 0;
+        } else {
+            return arr[n - 1] + sum(arr, n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        int sumValue = sum(arr, arr.length);
+        System.out.println("Sum of the array elements is: " + sumValue);
+    }
+}
+=========
+OUTPUT:
+======
+Sum of the array elements is: 150
+==================================================================================
+==================================================================================
+5. Decimal to binary number using recursion
+=======
+PROGRAM:
+========
+public class DecimalToBinary {
+  
+    public static String decimalToBinary(int decimal) {
+        if (decimal == 0) {
+            return "0";
+        } else if (decimal == 1) {
+            return "1";
+        } else {
+            return decimalToBinary(decimal / 2) + decimal % 2;
+        }
+    }
+
+    public static void main(String[] args) {
+        int decimal = 25;
+        String binary = decimalToBinary(decimal);
+        System.out.println("Binary representation of " + decimal + " is: " + binary);
+    }
+}
+========
+OUTPUT:
+=======
+Binary representation of 25 is: 11001
+=================================================================================================
+=================================================================================================
+6. Sum of digit of a number using recursion
+======
+PROGRAM:
+========
+public class SumOfDigits {
+  
+    public static int sumOfDigits(int number) {
+        if (number == 0) {
+            return 0;
+        } else {
+            return number % 10 + sumOfDigits(number / 10);
+        }
+    }
+
+    public static void main(String[] args) {
+        int number = 1012121312;
+        int sum = sumOfDigits(number);
+        System.out.println("Sum of digits of " + number + " is: " + sum);
+    }
+}
+=======
+OUTPUT:
+=======
+Sum of digits of 1012121312 is: 14
+==================================================================================================
+==================================================================================================
+7. Print reverse of a string using recursion
+============
+PROGRAM:
+=========
+public class ReverseString {
+    
+    public static void printReverse(String str) {
+        if (str == null || str.length() == 0) {
+            return;
+        } else {
+       System.out.print(str.charAt(str.length() - 1));
+          
+            printReverse(str.substring(0, str.length() - 1));
+        }
+    }
+
+    public static void main(String[] args) {
+        String input = "CDACMUMBAI"; 
+        System.out.print("Reverse of \"" + input + "\" is: ");
+        printReverse(input);
+    }
+}
+======
+OUTPUT:
+Reverse of "CDACMUMBAI" is: IABMUMCADC
+=====================================================================================================
+=====================================================================================================
+
+8. Program for length of a string using recursion
+========
+PROGRAM:
+========
+public class StringLength {
+    
+    public static int length(String str) {
+        if (str == null || str.equals("")) {
+            return 0;
+        } else {
+         
+            return 1 + length(str.substring(1));
+        }
+    }
+
+    public static void main(String[] args) {
+        String input = "CDACMUMBAI"; 
+        int length = length(input);
+        System.out.println("Length of \"" + input + "\" is: " + length);
+    }
+}
+=====
+OUTPUT:
+Length of "CDACMUMBAI" is: 10
+============================================================================================================
+============================================================================================================
+
