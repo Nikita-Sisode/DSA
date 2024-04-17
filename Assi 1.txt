@@ -1,0 +1,215 @@
+1. Write a Java Program to find GCD of two given numbers. 
+Program:
+=========
+class DSAP1{
+    public static void main(String[] args) {
+        int n1=30,n2=56;
+
+        int gcd = 1;
+
+        for (int i = 1; i <= n1 && i <=n2; ++i){
+
+            if (n1 % i == 0 && n2 % i == 0)
+            gcd = i;
+
+        }
+      System.out.println("GCD of " + n1 + " and " + n2 + " is " +gcd );  
+    }
+}
+======
+OUTPUT:
+GCD of 30 and 56 is 2
+============================================================================
+============================================================================
+2. Write a java program to LCM of TWO given number. 
+
+Program:
+=======
+public class LCM {
+    public static void main(String[] args) {
+        int num1 = 60, num2 = 15;
+
+        int hcf = getHCF(num1, num2);
+
+        System.out.println("The HCF: " + hcf);
+
+      
+        int lcm = (num1 * num2) / hcf;
+        System.out.println("The LCM: " + lcm);
+    }
+        static int getHCF(int a, int b) {
+        return b == 0 ? a : getHCF(b, a % b);
+    }
+}
+=======
+OUTPUT:
+The HCF: 15
+The LCM: 60
+==========================================================================
+==========================================================================
+3. Write a Java Program to print all the Factors of the Given Number. 
+
+Programs:
+=======
+class PrimeFactors {
+ 
+  
+    static void factors(int n, int i)
+    {
+ 
+       
+        if (i <= n) {
+            if (n % i == 0) {
+                System.out.print(i + " ");
+            }
+ 
+          
+            factors(n, i + 1);
+        }
+    }
+
+    public static void main(String args[])
+    { 
+	System.out.println("All Factors of num: ");
+	int N = 60;
+	
+        factors(N, 1);
+    }
+}
+========
+OUTPUT:
+All Prime Factors of num:
+1 2 3 4 5 6 10 12 15 20 30 60
+===============================================================================================
+===============================================================================================
+
+4. Check whether the Given Numberis a Palindrome or NOT. 
+====
+
+Palidrome Number:A number remains same even if its digits are reversed called palidrome number.
+ex.14641,32123,1001 etc
+==
+
+PROGRAM:
+===
+
+class Palindrome{
+
+static int rev(int n,int temp)
+{
+
+ if (n == 0)
+ return temp;
+ 
+ temp = (temp * 10) + (n % 10);
+ return rev (n / 10,temp);
+ }
+ public static void main (String Args[])
+ {
+ int n = 14641;
+ int temp = rev(n,0);
+ 
+  if (temp = = n )
+  System.out.println("This is Palidrome no");
+  
+   else 
+ System.out.println("This is not Palidrome no");
+ }
+
+}
+===
+OUTPUT:
+This is Palidrome no
+
+===============================================================================================
+===============================================================================================
+5. Write a Java Program to check whether the Given Number is Prime Number or NOT. 
+====
+
+PRIME NUMBERS:
+The numbers that have only 2 factors :1 and themselves.
+====
+
+PROGRAM:
+=====
+
+ class PrimeNumber{
+
+static boolean primeno(int n,int i)
+{
+
+if (n <= 2)
+  return (n == 2) ? true : false;
+  
+  if (n % i == 0)
+   return false;
+   
+   if (i * i > n)
+     return true;
+	  
+	  return primeno(n, i + 1);
+}
+public static void main(String [] args){
+int n = 17;
+ if (primeno(n, 2))
+ System.out.println("This is a Prime Number");
+ else
+  System.out.println("This is Not a Prime Number");
+
+}
+====
+OUTPUT:
+This is a Prime Number
+
+=========================================================================================
+=========================================================================================
+6. Write a Java Program to check whether the given number is Armstrong Numberor NOT.
+==
+Armstrong Number: The numbers that is equal to the sum of cubes of its digit.
+EX:153=1^3+5^3+3^3 = 3+125+27
+========
+PROGRAM:
+====
+ class ArmstrongNum {
+
+
+    public static void main(String[] args)
+    {
+       
+        int num = 153, reverse = 0;
+        int len = order(num);
+
+        if (num == ArmstrongNumSum(num, len))
+            System.out.println(num + " is an Armstrong Number");
+        else
+            System.out.println(num + " is not an Armstrong Number");
+
+    }
+
+    private static int ArmstrongNumSum(int num, int order) {
+        if(num == 0)
+            return 0;
+
+        int digit = num % 10;
+
+        return (int) Math.pow(digit, order) + ArmstrongNumSum(num/10, order);
+    }
+
+    private static int order(int num) {
+        int len = 0;
+        while (num!=0)
+        {
+            len++;
+            num = num/10;
+        }
+        return len;
+    }
+
+}
+======
+OUTPUT:
+153 is an Armstrong Number
+
+==========================================================================================
+==========================================================================================
+
